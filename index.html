@@ -1,167 +1,356 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Jelann Arts Studio</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Weekly plan</title>
 <style>
-:root{--bg:#111214;--pn:#181a1d;--pn2:#1f2226;--bd:#2a2d32;--tx:#e8e9eb;--mu:#8b9098;--ac:#c9a86a;--rd:#e5675f;--gn:#5fb37c;--yl:#d9b24c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
-:root:not([data-theme=dark]){}
-*{box-sizing:border-box}html,body{margin:0;height:100%}
-body{background:var(--bg);color:var(--tx);font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;display:flex}
-nav{width:200px;flex:none;background:var(--pn);border-right:1px solid var(--bd);padding:16px 10px;overflow:auto}
-nav h1{font-size:15px;margin:0 8px 14px;letter-spacing:.3px}nav h1 span{color:var(--ac)}
-nav small{display:block;color:var(--mu);font-size:10px;text-transform:uppercase;letter-spacing:1px;margin:14px 8px 4px}
-nav a{display:block;padding:6px 8px;border-radius:6px;color:var(--mu);cursor:pointer}nav a:hover{background:var(--pn2)}nav a.on{background:var(--pn2);color:var(--tx)}
-main{flex:1;overflow:auto;padding:20px 24px 90px;min-width:0}
-h2{font-size:20px;margin:0 0 14px;font-weight:600}h3{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--mu);margin:22px 0 8px;font-weight:600}
-button,input,select,textarea{font:inherit;color:var(--tx);background:var(--pn2);border:1px solid var(--bd);border-radius:6px;padding:7px 10px}
-textarea{width:100%;min-height:80px;resize:vertical}input,select{width:100%}
-button{cursor:pointer;width:auto}button:hover{border-color:#444a52}
-.pri{background:var(--ac);color:#15120b;border-color:var(--ac);font-weight:600}.sm{padding:3px 8px;font-size:12px}
-.card{background:var(--pn);border:1px solid var(--bd);border-radius:8px;padding:12px}
-.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.kan{display:flex;gap:10px;overflow-x:auto;padding-bottom:10px}.col{flex:0 0 220px;background:var(--pn);border:1px solid var(--bd);border-radius:8px;padding:8px;min-height:120px}
-.col h4{margin:0 0 8px;font-size:12px;color:var(--mu);display:flex;justify-content:space-between}
-.lc{background:var(--pn2);border:1px solid var(--bd);border-radius:7px;padding:9px;margin-bottom:8px;cursor:grab}
-.lc b{display:block}.mu{color:var(--mu);font-size:12px}.lc .row{margin-top:6px;gap:4px}
-.pill{font-size:11px;padding:1px 7px;border-radius:9px;border:1px solid var(--bd);color:var(--mu)}
-.due{color:var(--rd)}.big{font-size:26px;font-weight:600}
-.alert{border-left:3px solid var(--rd)}.list>div{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--bd)}
-.ov{position:fixed;inset:0;background:#000a;display:flex;align-items:flex-start;justify-content:center;padding:6vh 12px;overflow:auto;z-index:9}
-.md{background:var(--pn);border:1px solid var(--bd);border-radius:10px;padding:18px;width:100%;max-width:560px}
-.md label{display:block;color:var(--mu);font-size:12px;margin:10px 0 3px}.f2{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
-.tl div{padding:3px 0;color:var(--mu)}.tl b{color:var(--tx);font-weight:500}
-.tab{display:none}
-@media(max-width:760px){body{display:block}nav{position:fixed;bottom:0;left:0;right:0;width:auto;z-index:5;display:flex;overflow-x:auto;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--bd);border-right:0;gap:2px}
-nav h1,nav small{display:none}nav a{white-space:nowrap;padding:8px 10px}main{padding:14px 12px 90px;height:100%}.col{flex-basis:78vw}.f2{grid-template-columns:1fr}}
-</style></head><body>
-<nav id="nav"></nav><main id="main"></main><div id="ov"></div>
+:root{color-scheme:dark;--bg:#0C0D0B;--card:#151713;--ink:#EDEDE6;--mut:#8D9085;--line:#272a23;--col:#11130f;--accent:#E3B341;--green:#5FBF8A;--red:#E5675C;--now:#181710;--nowline:#4a4020;--doing:#1d1a0e;--doingink:#E3B341;--done:#14231a;--doneink:#7fd1a0;--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.4 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+button,input,select{font:inherit;color:inherit}
+.wrap{max-width:1400px;margin:0 auto;padding:24px 20px 48px}
+h1{margin:0;font-size:36px;font-weight:500;letter-spacing:-.01em}
+h1,.brand b,.stat .v{font-family:var(--serif);font-weight:500}
+h1 em{font-style:italic;color:var(--accent)}
+.brand{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:26px;border-bottom:1px solid var(--line)}
+.brand b{font-size:20px}.brand span{color:var(--mut);font-size:13px}
+.sub{color:var(--mut);margin:4px 0 20px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:20px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.stat .l{color:var(--mut);font-size:13px}
+.stat .v{font-size:34px;letter-spacing:-.01em;margin:6px 0}
+.stat .n{color:var(--mut);font-size:13px}
+.bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden;margin:8px 0}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:3px}
+.ctl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+select,.ctl input{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+.hint{color:var(--mut);font-size:12.5px}
+.btn{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer}
+.btn.pri{background:var(--accent);color:#0C0D0B;border-color:var(--accent);font-weight:600}
+.board{display:flex;gap:14px;overflow-x:auto;align-items:flex-start;padding-bottom:12px}
+.col{flex:0 0 288px;background:var(--col);border:1px solid var(--line);border-radius:16px;padding:14px;min-height:140px}
+.col.now{background:var(--now);border-color:var(--nowline)}
+.col.plan{background:transparent;border-style:dashed}
+.col.late{border-color:var(--red)}
+.col.over{outline:2px solid var(--accent);outline-offset:2px}
+.ch{display:flex;justify-content:space-between;gap:8px}
+.ch .t{font-size:12px;font-weight:600;color:var(--mut)}
+.col.now .t{color:var(--doingink)}.col.late .t{color:var(--red)}
+.ch .d{font-weight:700;font-size:15px}
+.ch .m{text-align:right;color:var(--mut);font-size:12px}
+.ch .m b{display:block;color:var(--ink);font-size:15px}
+.cs{color:var(--mut);font-size:12px;margin-top:2px}
+.goal{display:block;width:100%;background:none;border:0;border-radius:6px;padding:8px 0 4px;color:var(--mut);font-size:12.5px}
+.goal:focus{outline:2px solid var(--accent);padding:8px 6px 4px;color:var(--ink)}
+.cards{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:grab}
+.card.doing{background:var(--doing);border-color:var(--nowline)}
+.card.dragging{opacity:.4}
+.row{display:flex;align-items:center;gap:8px}
+.nm{flex:1;font-weight:600;min-width:0;overflow-wrap:anywhere}
+.card.done .nm{text-decoration:line-through;color:var(--mut)}
+.ck{flex:0 0 18px;height:18px;border-radius:50%;border:2px solid var(--mut);background:none;cursor:pointer;padding:0}
+.card.doing .ck{border-color:var(--accent)}
+.card.done .ck{background:var(--green);border-color:var(--green)}
+.mv{display:flex;gap:2px;opacity:.55}
+.card:hover .mv,.card:focus-within .mv{opacity:1}
+.mv button{background:none;border:0;cursor:pointer;color:var(--mut);padding:0 4px;font-size:16px;line-height:1}
+.mv button:hover{color:var(--ink)}
+.meta{display:flex;align-items:center;gap:8px;margin-top:8px}
+.tag{border:1px solid var(--line);border-radius:6px;padding:1px 7px;font-size:12px;color:var(--mut)}
+.pill{border:0;border-radius:999px;padding:1px 9px;font-size:12px;background:var(--col);color:var(--mut);cursor:pointer}
+.card.doing .pill{background:var(--doing);color:var(--doingink)}
+.card.done .pill{background:var(--done);color:var(--doneink)}
+.add{display:block;width:100%;margin-top:8px;border:1.5px dashed var(--line);background:none;border-radius:12px;padding:10px;color:var(--mut);cursor:pointer}
+.add:hover{color:var(--ink);border-color:var(--mut)}
+.form{margin-top:8px;display:grid;gap:6px}
+.form input,.form select{width:100%}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.empty{color:var(--mut);font-size:12.5px;padding:10px 2px}
+.opt{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px;font-size:12px;color:var(--mut)}
+.chip{background:none;border:1px solid var(--line);border-radius:999px;padding:1px 9px;font-size:12px;color:var(--mut);cursor:pointer}
+.chip:hover{color:var(--ink);border-color:var(--mut)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#0C0D0B;font-weight:600}
+.chk{display:flex;align-items:center;gap:6px;color:var(--mut);font-size:13px}
+.chk input{width:auto}
+.tot{color:var(--mut);font-size:13px}.tot b{color:var(--ink)}
+.key{color:var(--mut);font-size:12.5px;margin:-6px 0 16px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.top .sub{margin:4px 0 0}
+.btn.big{padding:11px 18px;font-size:15px}
+.welcome{display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--card);border:1px dashed var(--mut);border-radius:18px;padding:22px;margin-bottom:20px}
+.welcome h2{margin:0 0 6px;font:500 22px var(--serif)}.welcome p{margin:0;color:var(--mut);max-width:60ch}
+.cl{color:var(--mut);font-size:12.5px;margin:2px 0 0 26px}
+.sub2{color:var(--mut);font-size:12px;margin-top:6px}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:10}
+.dlg{position:fixed;z-index:11;left:50%;top:50%;transform:translate(-50%,-50%);width:min(540px,calc(100% - 24px));max-height:calc(100% - 24px);overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:14px}
+.dlg h2{margin:0;font:500 26px var(--serif)}
+.fld{display:grid;gap:6px;font-size:13px;color:var(--mut)}
+.fld input,.fld select,.fld textarea{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 12px;color:var(--ink);width:100%}
+.fld input.bad{border-color:var(--red)}
+.pk{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pkc{position:relative;display:block}
+.pkc input{position:absolute;opacity:0;width:1px;height:1px}
+.pkc span{display:grid;gap:2px;height:100%;border:1px solid var(--line);border-radius:12px;padding:10px;cursor:pointer}
+.pkc b{color:var(--ink);font-size:13px}.pkc i{font:500 22px var(--serif);color:var(--ink)}.pkc small{font-size:11.5px}
+.pkc input:checked+span{border-color:var(--accent);background:var(--now);box-shadow:0 0 0 1px var(--accent)}
+.pkc input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.step{display:flex;gap:6px}.step input{width:72px;text-align:center}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px}
+.foot .tot b{font:500 26px var(--serif)}
+.acts{display:flex;gap:8px;flex-wrap:wrap}
+.btn.danger{color:var(--red);border-color:var(--red)}
+@media (max-width:480px){.pk{grid-template-columns:1fr}}
+.fld textarea{resize:vertical;font:inherit;min-height:60px}
+.paste{display:grid;gap:10px;background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:12px}
+.rfq{border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.rfq summary{cursor:pointer;font-weight:600}
+.rfqb{display:grid;gap:12px;margin-top:12px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:600px){.col{flex-basis:84vw}}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<div id="modal"></div>
 <script>
-const ST=["New","Contacted","Replied","Qualified","Quote Sent","Negotiating","Won","Lost"],PL=["Roblox","Fortnite","Minecraft","Unity","Unreal","Mobile","PC","Other"],SR=["X / Twitter","Reddit","Discord","Referral","Website","Returning Client","Other"];
-const DT={"First Contact":"Hey {client}! I came across {game} and love the direction. I design game logos and would love to help give it a bold, memorable identity. Want to see some of my work?","Follow-up":"Hey {client}, just following up on {game}. Still looking for a logo? Happy to answer any questions!","Quote":"Hey {client}! For {game}, here's my quote: Standard $90 / Professional $150. Delivery works for {deadline}. Let me know which fits!","Revision":"Hey {client}, here's the updated {game} logo with your revisions. Let me know what you think!","Project Complete":"Hey {client}! Your {game} logo is complete. Thank you so much for working with me, and reach out anytime for future projects!"};
-const NAV=[["CRM"],["dash","Dashboard"],["leads","Leads"],["clients","Clients"],["fu","Follow-ups"],["an","Analytics"],["Design"],["prog","Progression Analyzer"],["port","Portfolio Reviews"],["Settings"],["tpl","Templates"],["set","CRM Settings"],["data","Data"]];
-let S;try{S=JSON.parse(localStorage.getItem("jas"))}catch(e){}
-S=S||{leads:[],tpl:DT,pref:{platform:"Roblox",source:"X / Twitter"}};
-let V="dash",F={q:"",stage:"",source:"",val:"",fu:""};
-const $=s=>document.querySelector(s),esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const save=()=>{try{localStorage.setItem("jas",JSON.stringify(S))}catch(e){}};
-const iso=d=>d.toISOString().slice(0,10),TD=()=>iso(new Date()),add=n=>{const d=new Date();d.setDate(d.getDate()+n);return iso(d)};
-const fd=s=>s?new Date(s+"T00:00").toLocaleDateString("en",{month:"short",day:"numeric"}):"";
-const G=id=>S.leads.find(l=>l.id==id),tot=l=>(+l.base||0)+(+l.rush||0)+(+l.rev||0),val=l=>tot(l)||+l.value||0;
-function log(l,t){l.log.push({d:TD(),t})}
-function mk(o){const l={id:Date.now()+Math.random(),name:"",project:"",platform:S.pref.platform,contact:"",source:S.pref.source,notes:[],stage:0,max:0,pkg:"",value:0,deadline:"",follow:"",log:[],created:TD(),...o};log(l,"Lead added");S.leads.unshift(l);return l}
-function mv(l,i){l.stage=+i;if(i<7)l.max=Math.max(l.max,+i);log(l,"Moved to "+ST[i]);save()}
-function toast(t){const e=document.createElement("div");e.textContent=t;e.style.cssText="position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--ac);color:#111;padding:8px 14px;border-radius:8px;z-index:20";document.body.append(e);setTimeout(()=>e.remove(),1600)}
-function copy(t){(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(()=>{const a=document.createElement("textarea");a.value=t;document.body.append(a);a.select();try{document.execCommand("copy")}catch(e){}a.remove()});toast("DM copied")}
-function dm(l,name){name=name||["First Contact","Follow-up","Follow-up","Quote","Quote","Quote","Project Complete","Follow-up"][l.stage];copy((S.tpl[name]||"").replace(/{client}/g,l.name||"there").replace(/{game}/g,l.project||"your game").replace(/{deadline}/g,l.deadline?fd(l.deadline):"your timeline"));if(l.stage==0)mv(l,1);log(l,"DM sent ("+name+")");save()}
-const opts=(a,v)=>a.map(x=>`<option ${x==v?"selected":""}>${esc(x)}</option>`).join("");
-function modal(h){$("#ov").innerHTML=`<div class="ov" onclick="if(event.target==this)closeM()"><div class="md">${h}</div></div>`}
-function closeM(){$("#ov").innerHTML="";draw()}
-function nav(){$("#nav").innerHTML=`<h1>Jelann <span>Arts</span></h1>`+NAV.map(n=>n.length==1?`<small>${n[0]}</small>`:`<a class="${V==n[0]?"on":""}" onclick="V='${n[0]}';draw()">${n[1]}</a>`).join("")}
-function fuBadge(l){if(!l.follow)return"";const o=l.follow<=TD();return`<span class="${o?"due":"mu"}">${o?"⚠ ":""}Follow-up ${l.follow==TD()?"today":fd(l.follow)}</span>`}
-function lcard(l){return`<div class="lc" draggable="true" ondragstart="event.dataTransfer.setData('t',${l.id})"><b>${esc(l.name||"Unnamed")}${l.project?" / "+esc(l.project):""}</b><div class="mu">${esc(l.platform)} ${val(l)?"· $"+val(l):""}</div><div>${fuBadge(l)}</div>
-<div class="row"><button class="sm" onclick="dm(G(${l.id}))">DM</button><button class="sm" onclick="note(${l.id})">Note</button><button class="sm" onclick="fup(${l.id})">Follow</button><select class="sm" style="width:auto;padding:2px" onchange="mv(G(${l.id}),this.value);draw()">${ST.map((s,i)=>`<option value="${i}" ${i==l.stage?"selected":""}>${i==l.stage?"Move…":s}</option>`).join("")}</select><button class="sm" onclick="open_(${l.id})">Open</button></div></div>`}
-function kanban(ls){return`<div class="kan">${ST.map((s,i)=>{const c=ls.filter(l=>l.stage==i);return`<div class="col" ondragover="event.preventDefault()" ondrop="mv(G(event.dataTransfer.getData('t')),${i});draw()"><h4>${s}<span>${c.length}</span></h4>${c.map(lcard).join("")}</div>`}).join("")}</div>`}
-function dash(){const due=S.leads.filter(l=>l.follow&&l.follow<=TD()&&l.stage<6),q=S.leads.filter(l=>l.stage==4),act=S.leads.filter(l=>l.stage==6&&(l.pay||"")!="Fully paid");
-const h=new Date().getHours();return`<h2>Good ${h<12?"morning":h<18?"afternoon":"evening"}, Jelann.</h2>
-<div class="row" style="margin-bottom:14px"><button class="pri" onclick="quick()">+ Add Lead</button><span class="mu">Press <b>N</b> to add · <b>Ctrl/⌘+K</b> to search</span></div>
-<h3>Today</h3><div class="grid"><div class="card"><span class="big">🔴 ${due.length}</span><div class="mu">follow-ups due</div></div><div class="card"><span class="big">🟡 ${q.length}</span><div class="mu">quotes awaiting response</div></div><div class="card"><span class="big">🟢 ${act.length}</span><div class="mu">active / unpaid projects</div></div></div>
-${due.length?`<h3>Follow up today</h3><div class="card alert list">${due.map(l=>`<div><span><b>${esc(l.name)}</b> — ${esc(l.project)}<div class="mu">${ST[l.stage]} · due ${fd(l.follow)}</div></span><button class="sm" onclick="open_(${l.id})">Open</button></div>`).join("")}</div>`:""}
-<h3>Pipeline</h3>${kanban(S.leads)}<h3>Recent leads</h3><div class="card list">${S.leads.slice(0,5).map(l=>`<div onclick="open_(${l.id})" style="cursor:pointer"><span><b>${esc(l.name)}</b> ${esc(l.project)}</span><span class="pill">${ST[l.stage]}</span></div>`).join("")||'<span class="mu">No leads yet. Press N.</span>'}</div>`}
-function filt(){return S.leads.filter(l=>{const t=(l.name+l.project+l.contact+l.discord+l.x+l.email+l.notes.map(n=>n.t).join(" ")).toLowerCase(),v=val(l);
-return(!F.q||t.includes(F.q.toLowerCase()))&&(!F.stage||ST[l.stage]==F.stage)&&(!F.source||l.source==F.source)&&(!F.val||(F.val=="a"?v<100:F.val=="b"?v>=100&&v<=250:v>250))&&(!F.fu||(F.fu=="none"?!l.follow:F.fu=="today"?l.follow==TD():F.fu=="over"?l.follow&&l.follow<TD():l.follow>TD()))})}
-function leads(){const ls=filt();return`<h2>Leads</h2><div class="row" style="margin-bottom:12px"><button class="pri" onclick="quick()">+ Add Lead</button><input style="flex:1;min-width:140px" placeholder="Search…" value="${esc(F.q)}" oninput="F.q=this.value;draw(1)">
-<select style="width:auto" onchange="F.stage=this.value;draw()"><option value="">Stage</option>${opts(ST,F.stage)}</select><select style="width:auto" onchange="F.source=this.value;draw()"><option value="">Source</option>${opts(SR,F.source)}</select>
-<select style="width:auto" onchange="F.val=this.value;draw()"><option value="">Value</option><option value="a" ${F.val=="a"?"selected":""}>&lt;$100</option><option value="b" ${F.val=="b"?"selected":""}>$100–$250</option><option value="c" ${F.val=="c"?"selected":""}>$250+</option></select>
-<select style="width:auto" onchange="F.fu=this.value;draw()"><option value="">Follow-up</option>${[["today","Today"],["over","Overdue"],["up","Upcoming"],["none","None"]].map(o=>`<option value="${o[0]}" ${F.fu==o[0]?"selected":""}>${o[1]}</option>`).join("")}</select></div>${kanban(ls)}`}
-function clients(){const ws=S.leads.filter(l=>l.stage==6),by={};ws.forEach(l=>(by[l.name.toLowerCase()]=by[l.name.toLowerCase()]||[]).push(l));
-return`<h2>Clients</h2><div class="card list">${Object.values(by).map(a=>`<div onclick="open_(${a[0].id})" style="cursor:pointer"><span><b>${esc(a[0].name)}</b><div class="mu">${a.map(x=>esc(x.project)).join(", ")} · last ${fd(a[0].log.at(-1).d)}</div></span><span>${a.length} project${a.length>1?"s":""} · $${a.reduce((s,l)=>s+val(l),0)}</span></div>`).join("")||'<span class="mu">Clients appear when a lead is moved to Won.</span>'}</div>`}
-function fu(){const ls=S.leads.filter(l=>l.follow&&l.stage<6).sort((a,b)=>a.follow>b.follow?1:-1);return`<h2>Follow-ups</h2><div class="card list">${ls.map(l=>`<div><span><b>${esc(l.name)}</b> — ${esc(l.project)}<div>${fuBadge(l)} <span class="mu">· ${ST[l.stage]}</span></div></span><span class="row"><button class="sm" onclick="dm(G(${l.id}))">Copy DM</button><button class="sm" onclick="fup(${l.id})">Reschedule</button><button class="sm" onclick="open_(${l.id})">Open</button></span></div>`).join("")||'<span class="mu">Nothing scheduled.</span>'}</div>`}
-function an(){const L=S.leads,mo=TD().slice(0,7),m=L.filter(l=>l.created.startsWith(mo)),c=(a,i)=>a.filter(l=>l.max>=i).length,won=m.filter(l=>l.stage==6),rev=won.reduce((s,l)=>s+val(l),0),pc=(a,b)=>b?Math.round(a/b*100)+"%":"—";
-const d=[m.length,c(m,1),c(m,2),c(m,4),won.length],lb=["Leads","DMs","Replies","Quotes","Clients"];
-const src=SR.map(s=>{const a=L.filter(l=>l.source==s),w=a.filter(l=>l.stage==6);return[s,a.length,c(a,2),c(a,4),w.length,w.reduce((t,l)=>t+val(l),0)]}).filter(r=>r[1]);
-return`<h2>Analytics</h2><h3>This month</h3><div class="grid">${d.map((n,i)=>`<div class="card"><span class="big">${n}</span><div class="mu">${lb[i]}</div></div>`).join("")}<div class="card"><span class="big">$${rev}</span><div class="mu">Revenue</div></div></div>
-<h3>Conversion (this month)</h3><div class="grid">${[["Lead → Reply",d[2],d[0]],["Reply → Quote",d[3],d[2]],["Quote → Client",d[4],d[3]],["Lead → Client",d[4],d[0]]].map(r=>`<div class="card"><span class="big">${pc(r[1],r[2])}</span><div class="mu">${r[0]} (${r[1]}/${r[2]})</div></div>`).join("")}</div>
-<h3>By source (all time)</h3><div class="card" style="overflow:auto"><table style="width:100%;border-collapse:collapse"><tr class="mu" style="text-align:left"><th>Source</th><th>Leads</th><th>Replies</th><th>Quotes</th><th>Clients</th><th>Revenue</th></tr>${src.map(r=>`<tr>${r.map((x,i)=>`<td style="padding:5px 0">${i==5?"$":""}${esc(x)}</td>`).join("")}</tr>`).join("")}</table></div>`}
-function tpl(){return`<h2>DM Templates</h2><p class="mu">Variables: {client} {game} {deadline}. Edits save automatically.</p>${Object.keys(S.tpl).map(k=>`<h3>${k}</h3><textarea oninput="S.tpl['${k}']=this.value;save()">${esc(S.tpl[k])}</textarea>`).join("")}`}
-function set(){return`<h2>CRM Settings</h2><div class="card" style="max-width:420px"><p class="mu">Defaults for Quick Add (also learned automatically from your last entry).</p><label>Platform</label><select onchange="S.pref.platform=this.value;save()">${opts(PL,S.pref.platform)}</select><label>Source</label><select onchange="S.pref.source=this.value;save()">${opts(SR,S.pref.source)}</select></div>`}
-function data(){return`<h2>Data</h2><div class="card" style="max-width:520px"><p class="mu">Your data is stored privately in this browser only. Export regularly as a backup.</p><div class="row"><button onclick="expJ()">Export JSON</button><button onclick="expC()">Export CSV</button><button onclick="$('#imp').click()">Import JSON / CSV</button><input id="imp" type="file" accept=".json,.csv" hidden onchange="imp(this.files[0])"></div></div>`}
-const stub=t=>`<h2>${t}</h2><div class="card mu">Not included in this lean first build. Ask me to add it and I'll build it next.</div>`;
-function dl(n,t,m){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([t],{type:m}));a.download=n;a.click()}
-function expJ(){dl("jelann-crm.json",JSON.stringify(S,null,2),"application/json")}
-const K=["name","project","platform","contact","source","stage","pkg","value","deadline","follow","discord","x","email","web","base","rush","rev","paid","created"];
-function expC(){const q=v=>'"'+String(v??"").replace(/"/g,'""')+'"';dl("jelann-leads.csv",[K.concat("notes").join(",")].concat(S.leads.map(l=>K.map(k=>q(k=="stage"?ST[l.stage]:l[k])).concat(q(l.notes.map(n=>n.t).join(" | "))).join(","))).join("\n"),"text/csv")}
-function csv(t){const r=[];let row=[],c="",q=0;for(let i=0;i<t.length;i++){const ch=t[i];if(q){if(ch=='"'&&t[i+1]=='"'){c+='"';i++}else if(ch=='"')q=0;else c+=ch}else if(ch=='"')q=1;else if(ch==","){row.push(c);c=""}else if(ch=="\n"){row.push(c);r.push(row);row=[];c=""}else if(ch!="\r")c+=ch}if(c||row.length){row.push(c);r.push(row)}return r}
-function imp(f){if(!f)return;f.text().then(t=>{try{if(f.name.endsWith(".json")){const o=JSON.parse(t);S=Object.assign(S,o)}else{const r=csv(t),h=r.shift();r.forEach(a=>{const o={};h.forEach((k,i)=>o[k]=a[i]);const l=mk({});K.forEach(k=>{if(o[k]!=null)l[k]=o[k]});l.stage=Math.max(0,ST.indexOf(o.stage));l.max=l.stage%7;if(o.notes)l.notes=o.notes.split(" | ").map(x=>({d:TD(),t:x}))})}save();toast("Imported");draw()}catch(e){toast("Import failed")}})}
-function quick(){modal(`<h2>Add Lead</h2><label>Command line (optional): Name | Project | Platform | Source | Notes</label><input id="cl" placeholder="Alex | Project Eclipse | Roblox | X | needs logo" oninput="parse(this.value)">
-<div class="f2"><div><label>Name</label><input id="qn"></div><div><label>Game / Project</label><input id="qp"></div><div><label>Platform</label><select id="qf">${opts(PL,S.pref.platform)}</select></div><div><label>Contact</label><input id="qc" placeholder="@username"></div></div>
-<label>Source</label><select id="qs">${opts(SR,S.pref.source)}</select><label>Notes</label><textarea id="qt" style="min-height:50px"></textarea>
-<div class="row" style="margin-top:12px"><button class="pri" id="qa" onclick="qadd()">Add Lead</button><button onclick="closeM()">Cancel</button></div>`);setTimeout(()=>$("#cl").focus(),30);$("#ov").onkeydown=e=>{if(e.key=="Enter"&&e.target.tagName!="TEXTAREA"){e.preventDefault();qadd()}}}
-function parse(v){const p=v.split(/\||,/).map(s=>s.trim()),m=(a,x)=>a.find(o=>o.toLowerCase().startsWith((x||"").toLowerCase())&&x)||a.find(o=>x&&o.toLowerCase().includes(x.toLowerCase()));
-$("#qn").value=p[0]||"";$("#qp").value=p[1]||"";if(p[2]){const a=m(PL,p[2]);if(a)$("#qf").value=a}if(p[3]){const a=m(SR,p[3]);if(a)$("#qs").value=a}$("#qt").value=p.slice(4).join(", ")}
-function qadd(){const n=$("#qn").value.trim(),p=$("#qp").value.trim();if(!n&&!p)return toast("Enter a name or project");const l=mk({name:n,project:p,platform:$("#qf").value,contact:$("#qc").value,source:$("#qs").value});S.pref.platform=l.platform;S.pref.source=l.source;const t=$("#qt").value.trim();if(t){l.notes.push({d:TD(),t});log(l,"Note added")}save();toast("Lead added");closeM();V=V=="dash"||V=="leads"?V:"leads";draw()}
-function note(id){const l=G(id);modal(`<h2>Add Note</h2><textarea id="nt" placeholder="Likes bold typography. Needs logo before Oct 15…"></textarea><div class="row" style="margin-top:10px"><button class="pri" onclick="G(${id}).notes.push({d:TD(),t:$('#nt').value});log(G(${id}),'Note added');save();closeM();open_(${id},1)">Save</button></div>`);$("#nt").focus()}
-function fup(id){const b=(t,d)=>`<button onclick="setF(${id},'${d}')">${t}</button>`;modal(`<h2>Next follow-up</h2><div class="row">${b("Tomorrow",add(1))}${b("3 days",add(3))}${b("1 week",add(7))}<input type="date" id="fd" style="width:auto" onchange="setF(${id},this.value)">${b("Clear","")}</div>`)}
-function setF(id,d){const l=G(id);l.follow=d;log(l,d?"Follow-up set for "+fd(d):"Follow-up cleared");save();closeM()}
-function open_(id){const l=G(id);if(!l)return;const f=(k,lab,t)=>`<div><label>${lab}</label><input ${t?`type="${t}"`:""} value="${esc(l[k])}" onchange="G(${id}).${k}=this.value;save()"></div>`;
-const sel=(k,lab,a)=>`<div><label>${lab}</label><select onchange="G(${id}).${k}=this.value;save()">${opts(a,l[k])}</select></div>`;
-modal(`<div class="row" style="justify-content:space-between"><h2 style="margin:0">${esc(l.name||"Lead")} ${l.project?"— "+esc(l.project):""}</h2><button onclick="closeM()">✕</button></div>
-<div class="row" style="margin:10px 0"><select style="width:auto" onchange="mv(G(${id}),this.value);open_(${id})">${ST.map((s,i)=>`<option value="${i}" ${i==l.stage?"selected":""}>${s}</option>`).join("")}</select>${fuBadge(l)}<button class="sm" onclick="fup(${id})">Follow-up</button><button class="sm" onclick="note(${id})">+ Add Note</button>
-<select id="dmt" style="width:auto">${opts(Object.keys(S.tpl))}</select><button class="sm" onclick="dm(G(${id}),$('#dmt').value)">Copy DM</button></div>
-<h3>Contact</h3><div class="f2">${f("name","Name")}${f("contact","Username")}${sel("platform","Platform",PL)}${f("discord","Discord")}${f("x","X / Twitter")}${f("email","Email")}${f("web","Website")}${sel("source","Source",SR)}</div>
-<h3>Project</h3><div class="f2">${f("project","Game name")}${f("genre","Genre")}${f("gstage","Game stage")}${f("deadline","Deadline","date")}</div>
-<h3>Opportunity</h3><div class="f2">${sel("pkg","Package",["","Standard — $90","Professional — $150","Custom"])}${f("value","Potential value ($)","number")}</div>
-${l.stage==6?`<h3>Revenue</h3><div class="f2">${f("base","Base price","number")}${f("rush","Rush fee","number")}${f("rev","Additional revisions","number")}${f("deposit","Amount paid","number")}${sel("pay","Payment status",["Unpaid","Deposit paid","Fully paid"])}</div><p>Total <b>$${tot(l)}</b> · Remaining <b>$${Math.max(0,tot(l)-(+l.deposit||0))}</b></p>`:""}
-<h3>Notes</h3>${l.notes.map(n=>`<div class="card" style="margin-bottom:6px"><span class="mu">${fd(n.d)}</span><br>${esc(n.t)}</div>`).join("")||'<span class="mu">No notes.</span>'}
-<h3>Activity</h3><div class="tl">${l.log.map(e=>`<div><b>${fd(e.d)}</b> — ${esc(e.t)}</div>`).join("")}</div>
-<div class="row" style="margin-top:14px"><button onclick="if(confirm('Delete lead?')){S.leads=S.leads.filter(x=>x.id!=${id});save();closeM()}">Delete</button></div>`)}
-function search(){modal(`<input id="gs" placeholder="Search everything…" oninput="gsr(this.value)"><div id="gr" class="list" style="margin-top:8px"></div>`);$("#gs").focus()}
-function gsr(q){q=q.toLowerCase();$("#gr").innerHTML=q?S.leads.filter(l=>JSON.stringify(l).toLowerCase().includes(q)).slice(0,10).map(l=>`<div style="cursor:pointer" onclick="open_(${l.id})"><span><b>${esc(l.name)}</b> ${esc(l.project)}</span><span class="pill">${ST[l.stage]}</span></div>`).join("")||'<span class="mu">No results</span>':""}
+const CATS=['Cartoony','Anime','Grunge','Semi-realism'];
+const pad=n=>String(n).padStart(2,'0');
+const key=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const addDays=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const parse=k=>{const[a,b,c]=k.split('-').map(Number);return new Date(a,b-1,c)};
+const mon=()=>{const n=new Date(),x=new Date(n.getFullYear(),n.getMonth(),n.getDate());x.setDate(x.getDate()-(x.getDay()+6)%7);return x};
+const fmt=d=>d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+const isoWeek=d=>{const t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));t.setUTCDate(t.getUTCDate()+4-(t.getUTCDay()||7));return Math.ceil(((t-new Date(Date.UTC(t.getUTCFullYear(),0,1)))/864e5+1)/7)};
+const money=n=>'$'+n.toLocaleString('en-US',{minimumFractionDigits:Number.isInteger(n)?0:2,maximumFractionDigits:2});
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const THIS=mon(),wk=n=>key(addDays(THIS,7*n)),W0=wk(0);
+const STORE='weekly-plan.jelann.v2';
+const PKG={starter:{name:'Starter',price:65,revs:1,time:'~1–2 weeks'},standard:{name:'Standard',price:90,revs:2,time:'~5–7 days'},pro:{name:'Professional',price:150,revs:3,time:'3–5 days'}};
+const ORDER=['starter','standard','pro'];
+const price=x=>PKG[x.pkg].price*(1+(x.rush?.25:0)+.1*(x.revs||0));
 
-const CR=["concept","composition","typography","shape","originality","technical","readability","suitability"],CL=["Concept","Composition","Typography","Shape Language","Originality","Technical Execution","Readability","Game Suitability"];
-let P={old:[],new:[],res:S.prog||null,busy:"",err:""};
-const mean=a=>a.length?a.reduce((s,x)=>s+x,0)/a.length:0,med=a=>{if(!a.length)return 0;const b=[...a].sort((x,y)=>x-y),m=b.length>>1;return b.length%2?b[m]:(b[m-1]+b[m])/2},sd=a=>{const m=mean(a);return Math.sqrt(mean(a.map(x=>(x-m)**2)))},r1=x=>(Math.round(x*10)/10).toFixed(1);
-const ovr=x=>mean(CR.map(k=>+x.scores[k]||0));
-function pick(g,fl){P[g]=[...fl].slice(0,10).map(f=>({f,u:URL.createObjectURL(f)}));draw()}
-async function runProg(){P.err="";if(P.old.length<3||P.new.length<3){P.err="Add at least 3 logos to each group.";return draw()}
-let sm;try{sm=await claude.use("sample")}catch(e){}
-if(!sm){P.err="AI analysis isn't available in this view.";return draw()}
-const lim=await sm.limits().catch(()=>null);if(!lim||!lim.images){P.err="Image analysis isn't available in this view.";return draw()}
-try{const res={};
-for(const g of["old","new"]){P.busy="Analyzing "+(g=="old"?"older":"recent")+" work…";draw();const fs=P[g].slice(0,lim.images.maxCount).map(x=>x.f),n=fs.length;
-res[g]=await sm.json(`You are assessing ${n} game-logo images from a solo designer's ${g=="old"?"OLDER":"RECENT"} work, in order (image 1 first). For each, give a structured, subjective assessment from 0-10 (one decimal; use the full range and be honest and critical) for: concept, composition, typography, shape (shape language), originality, technical (technical execution), readability, suitability (fit for game use: scalability, thumbnail legibility, genre fit). Add "note": one concrete sentence. Return ONLY a JSON array of ${n} objects: {"scores":{"concept":0,"composition":0,"typography":0,"shape":0,"originality":0,"technical":0,"readability":0,"suitability":0},"note":"..."}`,{images:fs})}
-P.busy="Building comparison…";draw();
-const sum=g=>CR.map(k=>k+": mean "+r1(mean(res[g].map(x=>+x.scores[k]||0)))+", best "+r1(Math.max(...res[g].map(x=>+x.scores[k]||0)))).join("; ")+"\nNotes: "+res[g].map(x=>x.note).join(" | ");
-res.syn=await sm.json(`Compare a game-logo designer's OLDER work vs RECENT work using these AI-assisted subjective assessments (0-10).\nOLDER — ${sum("old")}\nRECENT — ${sum("new")}\nDo NOT assume recent work is better; report regressions and plateaus honestly if the data or notes show them. Return ONLY JSON: {"improvements":[string],"plateaus":[string],"regressions":[string],"gaps":[string],"plan":[{"week":"Week 1","focus":string,"tasks":[string]}]}. Use concise, specific strings; use [] where none apply; plan has 4 weeks (30 days), 2-4 tasks each, targeting the biggest gaps.`,{modelTier:"complex"});
-P.res=res;S.prog=res;save();P.busy=""}catch(e){P.busy="";P.err=e.code=="not_granted"?"Permission declined.":"Analysis failed ("+(e.code||"error")+"). Try again with fewer or smaller images."}draw()}
-function zone(g,t){return`<div class="card"><b>${t}</b> <span class="mu">3–10 logos</span><div class="row" style="margin:8px 0"><button onclick="$('#f_${g}').click()">Choose images</button><input id="f_${g}" type="file" accept="image/*" multiple hidden onchange="pick('${g}',this.files)"><span class="mu">${P[g].length} selected</span></div><div class="row">${P[g].map(x=>`<img src="${x.u}" style="width:64px;height:64px;object-fit:contain;background:var(--pn2);border:1px solid var(--bd);border-radius:6px">`).join("")}</div></div>`}
-function prog(){const r=P.res;let h=`<h2>Progression Analyzer</h2><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">${zone("old","Older work")}${zone("new","Recent work")}</div><div class="row" style="margin:12px 0"><button class="pri" ${P.busy?"disabled":""} onclick="runProg()">${P.busy||"Analyze"}</button>${P.err?`<span class="due">${esc(P.err)}</span>`:""}</div><p class="mu">Scores are structured AI-assisted assessments (0–10), not objective measurements. Recent work isn't assumed to be better.</p>`;
-if(!r)return h;const A=g=>r[g].map(x=>ovr(x)),o=A("old"),n=A("new"),c=(g,k)=>r[g].map(x=>+x.scores[k]||0),dl=x=>`<span style="color:${x>0.3?"var(--gn)":x<-0.3?"var(--rd)":"var(--mu)"}">${x>0?"+":""}${r1(x)}</span>`;
-h+=`<h3>Comparison</h3><div class="card" style="overflow:auto"><table style="width:100%;border-collapse:collapse;white-space:nowrap"><tr class="mu" style="text-align:left"><th></th><th>Old avg</th><th>Recent avg</th><th>Δ</th><th>Old median</th><th>Recent median</th><th>Old best</th><th>Recent best</th></tr>`+
-CR.map((k,i)=>[CL[i],c("old",k),c("new",k)]).concat([["Overall",o,n]]).map(([t,a,b],i)=>`<tr style="${i==8?"font-weight:600;border-top:1px solid var(--bd)":""}"><td style="padding:5px 8px 5px 0">${t}</td><td>${r1(mean(a))}</td><td>${r1(mean(b))}</td><td>${dl(mean(b)-mean(a))}</td><td>${r1(med(a))}</td><td>${r1(med(b))}</td><td>${r1(Math.max(...a))}</td><td>${r1(Math.max(...b))}</td></tr>`).join("")+`</table></div>
-<p class="mu">Consistency (std. dev. of overall score, lower = more consistent): older ${r1(sd(o))} · recent ${r1(sd(n))}</p>`;
-const y=r.syn||{},L=(t,a)=>`<div class="card"><b>${t}</b><ul style="margin:6px 0 0;padding-left:18px">${(a||[]).map(x=>`<li>${esc(x)}</li>`).join("")||'<li class="mu">None found</li>'}</ul></div>`;
-h+=`<h3>Findings</h3><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">${L("Improvements",y.improvements)}${L("Plateaus",y.plateaus)}${L("Regressions",y.regressions)}${L("Skill gaps",y.gaps)}</div><h3>30-day practice plan</h3><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">${(y.plan||[]).map(w=>`<div class="card"><b>${esc(w.week)}: ${esc(w.focus)}</b><ul style="margin:6px 0 0;padding-left:18px">${(w.tasks||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`).join("")}</div>`;
-h+=["old","new"].map(g=>`<h3>Individual analysis — ${g=="old"?"older":"recent"}</h3><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">${r[g].map((x,i)=>`<div class="card">${P[g][i]?`<img src="${P[g][i].u}" style="width:100%;height:110px;object-fit:contain;background:var(--pn2);border-radius:6px">`:""}<div><b>#${i+1} · ${r1(ovr(x))}</b></div><div class="mu">${CR.map((k,j)=>CL[j].split(" ")[0]+" "+r1(+x.scores[k]||0)).join(" · ")}</div><div>${esc(x.note)}</div></div>`).join("")}</div>`).join("");
-return h}
+function seed(){return{project:'p1',weeks:4,goals:{},projects:[{id:'p1',name:'Logo commissions'}],items:[]}}
+let S;
+try{S=JSON.parse(localStorage.getItem(STORE))}catch(e){S=null}
+if(!S||!S.items)S=seed();
+S.items=S.items.filter(x=>!/^i\d{1,2}$/.test(x.id));
+S.projects=S.projects.filter(p=>!(p.id==='p2'&&p.name==='Studio clients'));
+if(!S.projects.some(p=>p.id===S.project))S.project=S.projects[0].id;
+S.items=S.items.filter(x=>S.projects.some(p=>p.id===x.p));
+const ui={adding:null,newProj:false};
+const save=()=>{try{localStorage.setItem(STORE,JSON.stringify(S))}catch(e){}};
+const mine=()=>S.items.filter(x=>x.p===S.project);
 
-let PR={files:[],cur:(S.reviews||[])[0]||null,busy:"",err:"",goal:"Roblox and indie game developers who need a game logo"};
-function pickR(fl){PR.files=[...fl].slice(0,12).map(f=>({f,u:URL.createObjectURL(f)}));draw()}
-async function runPR(){PR.err="";if(PR.files.length<3){PR.err="Add at least 3 pieces.";return draw()}
-let sm;try{sm=await claude.use("sample")}catch(e){}
-if(!sm){PR.err="AI review isn't available in this view.";return draw()}
-const lim=await sm.limits().catch(()=>null);if(!lim||!lim.images){PR.err="Image analysis isn't available in this view.";return draw()}
-PR.busy="Reviewing…";draw();
-try{const fs=PR.files.slice(0,lim.images.maxCount).map(x=>x.f),n=fs.length,g=($("#pg")||{}).value||PR.goal;PR.goal=g;
-const r=await sm.json(`You are a candid art director reviewing a solo game-logo designer's portfolio of ${n} pieces (numbered in order, image 1 first). Target clients: ${g}. Judge it as a portfolio that must win those clients, not just piece by piece. Return ONLY JSON: {"verdict":"2 sentence overall take","cohesion":{"score":0-10,"note":string},"clientAppeal":{"score":0-10,"note":string},"strengths":[string],"weaknesses":[string],"order":[{"piece":1,"action":"lead|keep|cut","why":string}],"gaps":[string],"actions":[string]}. "order" must have one entry per piece; "gaps" = styles, genres or proof a client would expect but is missing; "actions" = 3-5 prioritized, specific fixes. These are subjective AI-assisted assessments; be honest, not flattering.`,{images:fs,modelTier:"complex"});
-r.date=TD();r.n=n;r.goal=g;r.thumbs=PR.files.slice(0,n).map(x=>x.u);PR.cur=r;const h=Object.assign({},r);delete h.thumbs;S.reviews=[h].concat(S.reviews||[]).slice(0,10);save();PR.busy=""}catch(e){PR.busy="";PR.err=e.code=="not_granted"?"Permission declined.":"Review failed ("+(e.code||"error")+"). Try fewer or smaller images."}draw()}
-function port(){const r=PR.cur,L=(t,a)=>`<div class="card"><b>${t}</b><ul style="margin:6px 0 0;padding-left:18px">${(a||[]).map(x=>`<li>${esc(x)}</li>`).join("")||'<li class="mu">None</li>'}</ul></div>`;
-let h=`<h2>Portfolio Reviews</h2><div class="card"><b>Portfolio pieces</b> <span class="mu">3–12 images, your current best work</span><label class="mu" style="display:block;margin:8px 0 3px">Who is this portfolio for?</label><input id="pg" value="${esc(PR.goal)}"><div class="row" style="margin:8px 0"><button onclick="$('#pf').click()">Choose images</button><input id="pf" type="file" accept="image/*" multiple hidden onchange="PR.goal=$('#pg').value;pickR(this.files)"><span class="mu">${PR.files.length} selected</span></div><div class="row">${PR.files.map((x,i)=>`<span style="position:relative"><img src="${x.u}" style="width:64px;height:64px;object-fit:contain;background:var(--pn2);border:1px solid var(--bd);border-radius:6px"><span class="pill" style="position:absolute;left:2px;top:2px;background:var(--bg)">${i+1}</span></span>`).join("")}</div></div><div class="row" style="margin:12px 0"><button class="pri" ${PR.busy?"disabled":""} onclick="runPR()">${PR.busy||"Review portfolio"}</button>${PR.err?`<span class="due">${esc(PR.err)}</span>`:""}</div><p class="mu">Structured AI-assisted assessment, not an objective measurement. Numbers follow the order you selected.</p>`;
-if(!r)return h;const sc=(t,o)=>o?`<div class="card"><span class="big">${r1(+o.score||0)}</span><div class="mu">${t}</div><div>${esc(o.note)}</div></div>`:"";
-const ac={lead:"var(--gn)",keep:"var(--mu)",cut:"var(--rd)"};
-h+=`<h3>Verdict · ${fd(r.date)} · ${r.n} pieces</h3><div class="card">${esc(r.verdict)}</div><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:10px">${sc("Cohesion",r.cohesion)}${sc("Client appeal",r.clientAppeal)}</div>
-<h3>Piece order</h3><div class="card list">${(r.order||[]).map(o=>`<div><span>${r.thumbs&&r.thumbs[o.piece-1]?`<img src="${r.thumbs[o.piece-1]}" style="width:36px;height:36px;object-fit:contain;vertical-align:middle;margin-right:8px;background:var(--pn2);border-radius:4px">`:""}<b>#${o.piece}</b> <span class="mu">${esc(o.why)}</span></span><span class="pill" style="color:${ac[o.action]||"var(--mu)"}">${esc(o.action)}</span></div>`).join("")}</div>
-<h3>Findings</h3><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">${L("Strengths",r.strengths)}${L("Weaknesses",r.weaknesses)}${L("Missing / gaps",r.gaps)}${L("Do next",r.actions)}</div>`;
-if((S.reviews||[]).length>1)h+=`<h3>Past reviews</h3><div class="card list">${S.reviews.map((x,i)=>`<div style="cursor:pointer" onclick="PR.cur=S.reviews[${i}];draw()"><span>${fd(x.date)} · ${x.n} pieces</span><span class="mu">Cohesion ${r1(+x.cohesion?.score||0)} · Appeal ${r1(+x.clientAppeal?.score||0)}</span></div>`).join("")}</div>`;
-return h}
-function draw(keep){const f=document.activeElement,id=f&&f.tagName=="INPUT"&&keep?1:0;nav();$("#main").innerHTML=({dash,leads,clients,fu,an,tpl,set,data,prog,port})[V]();if(id){const i=$("#main input");i.focus();i.setSelectionRange(99,99)}}
-document.addEventListener("keydown",e=>{const t=e.target.tagName;if((e.ctrlKey||e.metaKey)&&e.key=="k"){e.preventDefault();search()}else if(e.key=="Escape")closeM();else if(e.key.toLowerCase()=="n"&&!e.ctrlKey&&!e.metaKey&&!["INPUT","TEXTAREA","SELECT"].includes(t)){e.preventDefault();quick()}});
-draw();
-</script></body></html>
+function columns(){
+  const items=mine(),cols=[],late=items.filter(x=>x.week&&x.week<W0&&x.status!=='done');
+  if(late.length)cols.push({id:'late',cls:'late',label:'Overdue',sub:'Past their week',items:late});
+  cols.push({id:'none',cls:'plan',label:'No target week',sub:'Not scheduled',items:items.filter(x=>!x.week)});
+  for(let n=0;n<S.weeks;n++){
+    const k=wk(n),a=addDays(THIS,7*n),b=addDays(a,6);
+    cols.push({id:k,week:k,cls:n?'':'now',label:n==0?'This week':n==1?'Next week':'In '+n+' weeks',
+      range:fmt(a)+' to '+fmt(b),wn:isoWeek(a),items:items.filter(x=>x.week===k)});
+  }
+  return cols;
+}
+
+function card(x){
+  const lab={todo:'To do',doing:'Doing',done:'Done'}[x.status],p=PKG[x.pkg],n=p.revs+(x.revs||0);
+  const sub=[p.name,x.rush?'Rush':'',n+(n==1?' revision':' revisions')].filter(Boolean).join(', ');
+  return `<div class="card ${x.status}" draggable="true" data-id="${x.id}" data-a="edit" tabindex="0" aria-label="Edit ${esc(x.name)}">
+    <div class="row"><button class="ck" data-a="done" aria-label="Mark delivered"></button><span class="nm">${esc(x.name)}</span>
+    <span class="mv"><button data-a="prev" aria-label="Move earlier">‹</button><button data-a="next" aria-label="Move later">›</button></span></div>
+    ${(x.client||x.discord)?`<div class="cl">${esc([x.client,x.discord].filter(Boolean).join(', '))}</div>`:''}
+    <div class="meta"><span class="tag">${esc(x.cat)}</span><b>${money(price(x))}</b><button class="pill" data-a="cycle">${lab}</button></div>
+    <div class="sub2">${sub}${x.deadline?'. Deadline: '+esc(x.deadline):''}</div></div>`;
+}
+
+function colHtml(c){
+  const done=c.items.filter(x=>x.status==='done').length,cost=c.items.reduce((s,x)=>s+price(x),0);
+  const sorted=[...c.items].sort((a,b)=>(a.status==='done')-(b.status==='done'));
+  const drop=c.id!=='late';
+  const head=c.week
+    ?`<div class="ch"><div><div class="t">${c.label}</div><div class="d">${c.range}</div><div class="cs">${done} of ${c.items.length} delivered</div></div><div class="m"><b>${money(cost)}</b>week ${c.wn}</div></div>
+      <div class="bar"><i style="width:${c.items.length?done/c.items.length*100:0}%"></i></div>
+      <input class="goal" data-goal="${c.week}" value="${esc(S.goals[c.week]||'')}" placeholder="+ set a goal for this week" aria-label="Goal for ${c.range}">`
+    :`<div class="t" style="font-size:12px;font-weight:600;color:var(--mut)">${c.label}</div><div class="cs">${c.items.length} waiting</div>`;
+  const form=drop?`<button class="add" data-a="new" data-col="${c.id}">+ Add logo</button>`:'';
+  return `<section class="col ${c.cls}" ${drop?`data-week="${c.id}"`:''}>${head}<div class="cards">${sorted.map(card).join('')||(drop?'<div class="empty">Nothing here yet. Drag a card in.</div>':'')}</div>${form}</section>`;
+}
+
+function render(){
+  const items=mine(),due=items.filter(x=>x.week===W0),delivered=due.filter(x=>x.status==='done').length;
+  const behind=items.filter(x=>x.week&&x.week<W0&&x.status!=='done').length;
+  const landing=due.reduce((s,x)=>s+price(x),0);
+  document.getElementById('app').innerHTML=`
+  <div class="brand"><b>Jelann Arts</b><span>Logo commissions board</span></div>
+  <div class="top"><div><h1>Weekly <em>plan.</em></h1><p class="sub">${fmt(THIS)} to ${fmt(addDays(THIS,6))}, ${due.length} due, ${delivered} delivered, ${behind} behind</p></div><button class="btn pri big" data-a="new">+ New logo</button></div>
+  <div class="stats">
+    <div class="stat"><div class="l">Due this week</div><div class="v">${due.length}</div><div class="bar"><i style="width:${due.length?delivered/due.length*100:0}%"></i></div><div class="n">${delivered} delivered, ${due.length-delivered} still open</div></div>
+    <div class="stat"><div class="l">Landing this week</div><div class="v">${money(landing)}</div><div class="n">${money(landing/2)} to start, ${money(landing/2)} on approval</div></div>
+    <div class="stat"><div class="l">Behind schedule</div><div class="v" style="color:var(${behind?'--red':'--green'})">${behind}</div><div class="n">${behind?'Past their week and not delivered':'Nothing has slipped'}</div></div>
+  </div>
+  <div class="ctl">
+    <select id="proj" aria-label="Project">${S.projects.map(p=>`<option value="${p.id}" ${p.id===S.project?'selected':''}>${esc(p.name)}</option>`).join('')}</select>
+    ${ui.newProj?`<input id="np" placeholder="Project name"><button class="btn pri" data-a="np-save">Create</button><button class="btn" data-a="np-cancel">Cancel</button>`:`<button class="btn" data-a="np-open">+ New project</button>`}
+    <select id="wks" aria-label="Weeks shown">${[3,4,6,8].map(n=>`<option value="${n}" ${n===S.weeks?'selected':''}>Show ${n} weeks</option>`).join('')}</select>
+    <span class="hint">Click a card to edit it. Drag it to another week to reschedule.</span>
+  </div>
+  ${items.length?'':`<div class="welcome"><div><h2>Add your first logo</h2><p>Pick a package, choose a delivery week, and it lands on the board. Drag cards between weeks as plans change, and tick the circle when you deliver.</p></div><button class="btn pri big" data-a="new">+ Add your first logo</button></div>`}
+  <p class="key">${ORDER.map(k=>PKG[k].name+' '+money(PKG[k].price)).join(', ')}. Rush adds 25% and each extra revision adds 10%, both of the package price.</p>
+  <div class="board">${columns().map(colHtml).join('')}</div>`;
+  if(ui.newProj)document.getElementById('np')?.focus();
+}
+
+function shift(x,d){
+  if(!x.week){if(d>0)x.week=W0;return}
+  if(x.week===W0&&d<0){x.week=null;return}
+  const n=key(addDays(parse(x.week),7*d));
+  if(n>wk(S.weeks-1))return;
+  x.week=n<W0?W0:n;
+}
+function addProject(){
+  const name=document.getElementById('np').value.trim();
+  if(!name){document.getElementById('np').focus();return}
+  const id='p'+Date.now();S.projects.push({id,name});S.project=id;ui.newProj=false;
+}
+
+const app=document.getElementById('app');
+app.addEventListener('click',e=>{
+  const b=e.target.closest('[data-a]');if(!b)return;
+  const a=b.dataset.a,el=b.closest('.card'),x=el&&S.items.find(i=>i.id===el.dataset.id);
+  if(a==='done'&&x)x.status=x.status==='done'?'todo':'done';
+  else if(a==='cycle'&&x)x.status={todo:'doing',doing:'done',done:'todo'}[x.status];
+  else if(a==='prev'&&x)shift(x,-1);
+  else if(a==='next'&&x)shift(x,1);
+  else if(a==='edit')openModal(el.dataset.id);
+  else if(a==='new')openModal(null,b.dataset.col);
+  else if(a==='pkg'&&x)x.pkg=ORDER[(ORDER.indexOf(x.pkg)+1)%3];
+  else if(a==='rush'&&x)x.rush=!x.rush;
+  else if(a==='rev'&&x)x.revs=(x.revs||0)+1;
+  else if(a==='revdn'&&x)x.revs=Math.max(0,(x.revs||0)-1);
+  
+  
+  
+  else if(a==='np-open')ui.newProj=true;
+  else if(a==='np-cancel')ui.newProj=false;
+  else if(a==='np-save')addProject();
+  save();render();
+});
+app.addEventListener('change',e=>{
+  const t=e.target;
+  if(t.id==='proj'){S.project=t.value;ui.adding=null}
+  else if(t.id==='wks')S.weeks=+t.value;
+  else if(t.dataset.goal){S.goals[t.dataset.goal]=t.value.trim();save();return}
+  else return;
+  save();render();
+});
+app.addEventListener('keydown',e=>{
+  if(e.key!=='Enter')return;
+  const t=e.target;
+  if(t.classList.contains('card'))openModal(t.dataset.id);
+  else if(t.id==='np'){addProject();save();render()}
+  else if(t.dataset.goal)t.blur();
+});
+app.addEventListener('input',e=>{
+  if(!['f-pkg','f-rush','f-rev'].includes(e.target.id))return;
+  const g=i=>document.getElementById(i);
+  g('f-total').textContent=money(price({pkg:g('f-pkg').value,rush:g('f-rush').checked,revs:Math.max(0,parseInt(g('f-rev').value)||0)}));
+});
+let dragId=null;
+app.addEventListener('dragstart',e=>{const c=e.target.closest('.card');if(!c)return;dragId=c.dataset.id;e.dataTransfer.setData('text/plain',dragId);e.dataTransfer.effectAllowed='move';setTimeout(()=>c.classList.add('dragging'),0)});
+app.addEventListener('dragend',()=>{dragId=null;render()});
+app.addEventListener('dragover',e=>{const c=e.target.closest('.col[data-week]');if(!c||!dragId)return;e.preventDefault();document.querySelectorAll('.col.over').forEach(n=>n!==c&&n.classList.remove('over'));c.classList.add('over')});
+app.addEventListener('drop',e=>{
+  const c=e.target.closest('.col[data-week]');if(!c||!dragId)return;e.preventDefault();
+  const x=S.items.find(i=>i.id===dragId);
+  if(x){x.week=c.dataset.week==='none'?null:c.dataset.week;save()}
+});
+const $=id=>document.getElementById(id);
+function openModal(id,col){
+  const x=id?S.items.find(i=>i.id===id):null;
+  const v=x||{name:'',client:'',cat:CATS[0],pkg:'standard',rush:false,revs:0,week:col==null?W0:col==='none'?null:col};
+  const wo=[['none','No target week']];
+  for(let n=0;n<S.weeks;n++){const a=addDays(THIS,7*n);wo.push([wk(n),(n==0?'This week':n==1?'Next week':'In '+n+' weeks')+', '+fmt(a)+' to '+fmt(addDays(a,6))])}
+  if(v.week&&!wo.some(o=>o[0]===v.week))wo.push([v.week,'Week of '+fmt(parse(v.week))]);
+  const hasD=['discord','email','pay','idea','refs','deadline','notes'].some(k=>v[k]);
+  ui.open=true;ui.edit=x?x.id:null;
+  $('modal').innerHTML=`<div class="scrim" data-a="close"></div><div class="dlg" role="dialog" aria-modal="true" aria-labelledby="mt">
+    <h2 id="mt">${x?'Edit logo':'New logo'}</h2>
+    <div class="paste"><label class="fld">Paste an RFQ from your site<textarea id="m-paste" rows="3" placeholder="Package: Standard ($90)&#10;Rush order: Yes (+$22.50)&#10;Name: ..."></textarea></label><div class="row"><button class="btn" data-a="m-fill">Fill in from RFQ</button><span class="hint" id="m-fillmsg"></span></div></div>
+    <label class="fld">Logo name<input id="m-name" value="${esc(v.name)}" placeholder="e.g. Hyper District" maxlength="80"></label>
+    <label class="fld">Client name, optional<input id="m-client" value="${esc(v.client||'')}" placeholder="Name or studio" maxlength="80"></label>
+    <div class="r2"><label class="fld">Style<select id="m-cat">${CATS.map(c=>`<option ${c===v.cat?'selected':''}>${c}</option>`).join('')}</select></label>
+    <label class="fld">Delivery week<select id="m-week">${wo.map(o=>`<option value="${o[0]}" ${o[0]===(v.week||'none')?'selected':''}>${o[1]}</option>`).join('')}</select></label></div>
+    <div class="fld">Package<div class="pk">${ORDER.map(k=>`<label class="pkc"><input type="radio" name="pkg" value="${k}" ${k===v.pkg?'checked':''}><span><b>${PKG[k].name}</b><i>${money(PKG[k].price)}</i><small>${PKG[k].revs} ${PKG[k].revs==1?'revision':'revisions'}, ${PKG[k].time}</small></span></label>`).join('')}</div></div>
+    <label class="chk"><input id="m-rush" type="checkbox" ${v.rush?'checked':''}> Rush order, adds 25%</label>
+    <div class="fld">Extra revisions, 10% each<div class="step"><button class="btn" data-a="rv-" aria-label="Fewer revisions">−</button><input id="m-rev" type="number" min="0" value="${v.revs||0}"><button class="btn" data-a="rv+" aria-label="More revisions">+</button></div></div>
+    <details class="rfq" ${hasD?'open':''}><summary>RFQ details</summary><div class="rfqb">
+      <div class="r2"><label class="fld">Discord<input id="m-discord" value="${esc(v.discord||'')}" maxlength="80"></label><label class="fld">Email<input id="m-email" type="email" value="${esc(v.email||'')}" maxlength="120"></label></div>
+      <div class="r2"><label class="fld">Payment method<input id="m-pay" value="${esc(v.pay||'')}" placeholder="e.g. Crypto" maxlength="60"></label><label class="fld">Client deadline<input id="m-deadline" value="${esc(v.deadline||'')}" maxlength="80"></label></div>
+      <label class="fld">Idea<textarea id="m-idea" rows="3">${esc(v.idea||'')}</textarea></label>
+      <label class="fld">References<textarea id="m-refs" rows="2">${esc(v.refs||'')}</textarea></label>
+      <label class="fld">Notes<textarea id="m-notes" rows="2">${esc(v.notes||'')}</textarea></label>
+    </div></details>
+    <div class="foot"><div class="tot">Total <b id="m-total"></b></div><div class="acts">${x?'<button class="btn danger" data-a="m-del">Delete</button>':''}<button class="btn" data-a="close">Cancel</button><button class="btn pri" data-a="m-save">${x?'Save changes':'Add logo'}</button></div></div></div>`;
+  mTotal();$('m-name').focus();
+}
+function mVals(){return{pkg:document.querySelector('input[name=pkg]:checked').value,rush:$('m-rush').checked,revs:Math.max(0,parseInt($('m-rev').value)||0)}}
+function mTotal(){$('m-total').textContent=money(price(mVals()))}
+function closeModal(){ui.open=false;$('modal').innerHTML=''}
+function saveModal(){
+  const name=$('m-name').value.trim();
+  if(!name){$('m-name').classList.add('bad');$('m-name').focus();return}
+  const w=$('m-week').value,f={name,client:$('m-client').value.trim(),cat:$('m-cat').value,week:w==='none'?null:w,...mVals(),
+    discord:$('m-discord').value.trim(),email:$('m-email').value.trim(),pay:$('m-pay').value.trim(),deadline:$('m-deadline').value.trim(),
+    idea:$('m-idea').value.trim(),refs:$('m-refs').value.trim(),notes:$('m-notes').value.trim()};
+  if(ui.edit)Object.assign(S.items.find(i=>i.id===ui.edit),f);
+  else S.items.push({id:'i'+Date.now(),p:S.project,status:'todo',...f});
+  closeModal();save();render();
+}
+const RFQ_KEYS={'package':'pkg','rush order':'rush','rush':'rush','additional revisions':'revs','extra revisions':'revs','estimated total':'total','payment method':'pay','payment':'pay','idea':'idea','references':'refs','deadline':'deadline','notes':'notes','name':'name','discord':'discord','email':'email'};
+function parseRFQ(t){
+  const o={};let k=null;
+  t.split(/\r?\n/).forEach(l=>{
+    const m=l.match(/^\s*([A-Za-z ]{2,24}?)\s*:\s*(.*)$/),key=m&&RFQ_KEYS[m[1].trim().toLowerCase()];
+    if(key){k=key;o[k]=m[2].trim()}else if(k&&l.trim())o[k]+='\n'+l.trim();
+  });
+  return o;
+}
+function fillRFQ(){
+  const o=parseRFQ($('m-paste').value),set=(id,v)=>{if(v)$(id).value=v},msg=$('m-fillmsg');
+  if(!Object.keys(o).length){msg.textContent='No "Label: value" lines found.';return}
+  const pk=ORDER.find(k=>new RegExp(PKG[k].name,'i').test(o.pkg||''));
+  if(pk)document.querySelector('input[name=pkg][value='+pk+']').checked=true;
+  if(o.rush!=null)$('m-rush').checked=/^\s*y/i.test(o.rush);
+  if(o.revs!=null)$('m-rev').value=parseInt(o.revs)||0;
+  set('m-client',o.name);set('m-discord',o.discord);set('m-email',o.email);set('m-pay',o.pay);
+  set('m-idea',o.idea);set('m-refs',o.refs);set('m-deadline',o.deadline);set('m-notes',o.notes);
+  if(!$('m-name').value.trim()&&o.name)$('m-name').value='Logo for '+o.name;
+  const d=o.deadline&&new Date(/\d{4}/.test(o.deadline)?o.deadline:o.deadline+' '+THIS.getFullYear());
+  if(d&&!isNaN(d)){const m=new Date(d.getFullYear(),d.getMonth(),d.getDate());m.setDate(m.getDate()-(m.getDay()+6)%7);const w=key(m);if([...$('m-week').options].some(x=>x.value===w))$('m-week').value=w}
+  document.querySelector('.rfq').open=true;mTotal();
+  const q=parseFloat((o.total||'').replace(/[^0-9.]/g,'')),c=price(mVals());
+  msg.textContent='Filled in.'+(q&&Math.abs(q-c)>.01?' The RFQ total was '+money(q)+', but these packages price it at '+money(c)+'.':'');
+}
+$('modal').addEventListener('click',e=>{
+  const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a;
+  if(a==='close')closeModal();
+  else if(a==='m-save')saveModal();
+  else if(a==='m-fill')fillRFQ();
+  else if(a==='rv-'||a==='rv+'){$('m-rev').value=Math.max(0,(parseInt($('m-rev').value)||0)+(a==='rv+'?1:-1));mTotal()}
+  else if(a==='m-del'){
+    if(b.dataset.sure){S.items=S.items.filter(i=>i.id!==ui.edit);closeModal();save();render()}
+    else{b.dataset.sure=1;b.textContent='Click again to confirm'}
+  }
+});
+$('modal').addEventListener('input',e=>{e.target.classList.remove('bad');mTotal()});
+$('modal').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName==='INPUT'&&!['radio','checkbox'].includes(e.target.type))saveModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&ui.open)closeModal()});
+render();
+</script>
+</body>
+</html>
